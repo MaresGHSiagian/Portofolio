@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.section`
   margin-top: 15rem;
   
@@ -63,20 +62,25 @@ export const Container = styled.section`
           }
         }
       }
-
-      footer{
-        margin-top: auto;
-        .tech-list{
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-          font-size: 1.4rem;
-          opacity: 0.6;
-        }
-      }
-
+footer {
+  margin-top: auto;
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Jarak antar elemen */
+    font-size: 1.4rem;
+    opacity: 0.6;
+    justify-content: flex-start; /* Mulai dari kiri */
+    
+    li {
+      width: calc(25% - 0.75rem); /* Perhitungkan gap */
+      text-align: left; /* Biar teksnya tetap kiri */
+      min-height: 3rem; /* Optional: supaya tingginya seragam */
     }
   }
+}
+    }
+}
 
   @media (max-width: 960px){
     .projects{

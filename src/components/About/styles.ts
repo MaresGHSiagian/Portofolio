@@ -45,18 +45,25 @@ export const Container = styled.section`
   
   
 
-  .about-image{
-    text-align: center;
-   img{
-     margin-top: 2rem;
-     width: 75%;
-     filter: grayscale(0);
-     transition: filter 0.5s;
-     &:hover{
-       filter: grayscale(0);
-     }
-   }
+  .about-image {
+  text-align: center;
+
+  img {
+    margin-top: 2rem;
+    width: 75%;
+    filter: grayscale(0);
+    border-radius: 50%; /* <-- selalu bulat dari awal */
+    object-fit: cover;   /* <-- supaya proporsional */
+    aspect-ratio: 1/1;   /* <-- menjaga rasio biar beneran bulat */
+    transition: filter 0.5s, transform 0.5s;
+
+    &:hover {
+      filter: grayscale(0);
+      transform: scale(1.05); /* contoh efek tambahan pas hover */
+    }
   }
+}
+
 
   @media only screen and (max-width: 480px) {
     .about-image {

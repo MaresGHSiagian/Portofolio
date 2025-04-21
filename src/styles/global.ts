@@ -2,9 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   :root{
-    --pink: #E31F71;
-    --black: #212121;
-    --green: #23ce6b;
+    --pink:rgb(228, 131, 21);
+    --black:rgb(33, 33, 33);
+    --green:rgb(35, 44, 206);
     --blue: #016fb9;
     scroll-padding-top: 10rem;
 
@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
       body{
         transition: 0.5s;
-        background-color: #f5f5f5;
+        background-color:rgb(191, 244, 240);
         color: var(--black);
       }
 
@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
       footer.footer{
         transition: 0.5s;
-        background-color: rgba(0,0,0,0.1);
+        background-color: rgba(66, 221, 95, 0.1);
         color: var(--black);
       }
 
