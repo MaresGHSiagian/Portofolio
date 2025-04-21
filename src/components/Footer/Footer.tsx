@@ -9,8 +9,8 @@ import instagramIcon from '../../assets/instagram.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://maresghsiagian.github.io" className="logo">
-        <span>https://maresghsiagian.github.io</span>
+      <a href="https://myportofolio-rosy.vercel.app/" className="logo">
+        <span>https://myportofolio-rosy.vercel.app/</span>
       </a>
       <div>
         <p>© 2024 Mares G H Siagian</p>
@@ -31,7 +31,7 @@ export function Footer() {
           <img src={githubIcon} alt="GitHub" />
         </a>
         <a
-          href="https://api.whatsapp.com/send/?phone=6285362439574&text=Hello+Vinayak+I+found+your+contact+through+portfolio+site.%0A%0A"
+          href="https://api.whatsapp.com/send/?phone=6285362439574&text=Hello+Mares+I+found+your+contact+through+portfolio+site.%0A%0A"
           target="_blank"
           rel="noreferrer"
         >
