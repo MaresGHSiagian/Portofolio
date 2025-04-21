@@ -173,24 +173,25 @@ The platform supports screen sharing, participant management, and breakout rooms
                 <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
               </svg>
               <div className="project-links">
-                <a href="" target="\_blank" rel="noreferrer">
+                <a href="https://github.com/MaresGHSiagian/Portofolio" target="\_blank" rel="noreferrer">
                   <img src={githubIcon} alt="Visit site" />
                 </a>
-                {/* <a href="https://github.com/CodeVinayak/Jupyter-Notebook/blob/main/Credit%20Risk%20Analysis/Credit_Risk_Analysis.ipynb" target="\_blank" rel="noreferrer">
+                <a href="https://myportofolio-rosy.vercel.app/" target="\_blank" rel="noreferrer">
                   <img src={externalLink} alt="Visit site" />
-                </a> */}
+                </a>
               </div>
             </header>
             <div className="body">
-              <h3></h3>
+              <h3>My Portofolio || Mares GH Siagian</h3>
               <p>
+              portfolio showcases my work as a web developer, highlighting projects built with React and TypeScript. It demonstrates my skills in creating responsive, interactive applications with a focus on clean, maintainable code. The projects featured here reflect my commitment to delivering high-quality, user-friendly web experience
               </p>
             </div>
             <footer>
               <ul className="tech-list">
-                {/* <li>XGBoost</li>
-                <li>Pandas</li>
-                <li>Matplotlib</li> */}
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>HTML</li>
               </ul>
             </footer>
           </div>
