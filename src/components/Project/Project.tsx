@@ -189,9 +189,9 @@ The platform supports screen sharing, participant management, and breakout rooms
             </div>
             <footer>
               <ul className="tech-list">
+              <li>HTML</li>
                 <li>React</li>
                 <li>TypeScript</li>
-                <li>HTML</li>
               </ul>
             </footer>
           </div>
