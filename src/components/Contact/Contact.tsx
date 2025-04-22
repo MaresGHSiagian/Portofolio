@@ -15,12 +15,20 @@ export function Contact(){
       </header>
       <div className="contacts">
         <div>
-        <a href="marespdd@gmail.com"><img src={emailIcon} alt="Email" /></a> 
-          <a href="marespdd@gmail.com">marespdd@gmail.com</a>
+          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}}>
+            <img src={emailIcon} alt="Email" />
+          </a> 
+          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}}>
+            marespdd@gmail.com
+          </a>
         </div>
         <div>
-        <a href="6285362439574"><img src={phoneIcon} alt="Phone No" /></a>
-          <a href="tel:+6285362439574">(+62) 85362439574</a>
+          <a href="https://wa.me/6285362439574" target="_blank" rel="noopener noreferrer" style={{cursor: "pointer"}}>
+            <img src={phoneIcon} alt="Phone No" />
+          </a>
+          <a href="https://wa.me/6285362439574" target="_blank" rel="noopener noreferrer" style={{cursor: "pointer"}}>
+            (+62) 85362439574
+          </a>
         </div>  
       </div>
       <Form></Form>
