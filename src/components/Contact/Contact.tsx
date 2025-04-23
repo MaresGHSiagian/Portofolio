@@ -15,10 +15,10 @@ export function Contact(){
       </header>
       <div className="contacts">
         <div>
-          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}}>
+          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}} target="_blank" rel="noopener noreferrer">
             <img src={emailIcon} alt="Email" />
           </a> 
-          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}}>
+          <a href="mailto:marespdd@gmail.com" style={{cursor: "pointer"}} target="_blank" rel="noopener noreferrer">
             marespdd@gmail.com
           </a>
         </div>

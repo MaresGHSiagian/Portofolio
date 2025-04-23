@@ -125,7 +125,11 @@ order to make a real contribution to the team and organization.
       </div>
       <div className="about-image">
         <ScrollAnimation animateIn="fadeInRight" delay={0.21 * 1000}>
-          <img src={maressss} alt="Mares Siagian" />
+          <img
+            src={maressss}
+            alt="Mares Siagian"
+            style={{ background: "transparent", opacity: 0.7 }}
+          />
         </ScrollAnimation>
       </div>
     </Container>
