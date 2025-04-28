@@ -7,6 +7,7 @@ import validator from 'validator'
 export function Form() {
   const [state, handleSubmit] = useForm('xknkpqry')
   const [validEmail, setValidEmail] = useState(false)
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   
   function verifyEmail(email: string) {
@@ -26,8 +27,10 @@ export function Form() {
         hideProgressBar: false,
         toastId: 'succeeded',
       })
+      setEmail('')
+      setMessage('')
     }
-  })
+  }, [state.succeeded])
 
   if (state.succeeded) {
     return (
@@ -54,7 +57,9 @@ export function Form() {
           id="email"
           type="email"
           name="email"
+          value={email}
           onChange={(e) => {
+            setEmail(e.target.value)
             verifyEmail(e.target.value)
           }}
           required
@@ -65,6 +70,7 @@ export function Form() {
           placeholder="Send a message to get started."
           id="message"
           name="message"
+          value={message}
           onChange={(e) => {
             setMessage(e.target.value)
           }}
