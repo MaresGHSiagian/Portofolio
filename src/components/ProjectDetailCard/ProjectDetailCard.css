@@ -1,0 +1,303 @@
+.project-detail-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: background 0.3s;
+  pointer-events: auto;
+  backdrop-filter: blur(2px);
+}
+.project-detail-card-outer {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.project-detail-close-outside {
+  position: absolute;
+  top: -36px;
+  right: -36px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.7rem;
+  color: #e48315;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-detail-close-outside:hover, .project-detail-close-outside:focus {
+  background: #e48315;
+  color: #fff;
+  transform: scale(1.13) rotate(8deg);
+  outline: 2px solid #fff;
+}
+.project-detail-card.optimized {
+  background: linear-gradient(135deg, #18181b 60%, #e48315 100%);
+  padding: 0;
+  border-radius: 18px;
+  max-width: 410px;
+  min-width: 300px;
+  min-height: 380px;
+  box-shadow: 0 8px 32px 0 rgba(228,131,21,0.13), 0 2px 8px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: fadeInScale 0.3s;
+  z-index: 100000;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s, border 0.25s;
+}
+.project-detail-card.optimized:hover {
+  box-shadow: 0 12px 48px rgba(228,131,21,0.22), 0 4px 16px rgba(35,206,107,0.18);
+  transform: translateY(-4px) scale(1.02);
+  border: 2px solid #e48315;
+}
+.project-detail-img-scroll,
+.project-detail-img-vertical-scroll {
+  width: 100%;
+  max-width: 100%;
+  height: 240px;
+  max-height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #222;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: #e48315 #222;
+}
+.project-detail-img-scroll::-webkit-scrollbar,
+.project-detail-img-vertical-scroll::-webkit-scrollbar {
+  background: #222;
+  height: 6px;
+  width: 6px;
+}
+.project-detail-img-scroll::-webkit-scrollbar-thumb,
+.project-detail-img-vertical-scroll::-webkit-scrollbar-thumb {
+  background: #e48315;
+  border-radius: 6px;
+}
+.project-detail-img-noscr {
+  width: 100%;
+  max-width: 100%;
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  overflow: hidden;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+.project-detail-img.full.scrollable-vertical {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Tidak pakai object-fit agar rasio gambar asli */
+}
+.project-detail-img.full {
+  width: 100%;
+  max-width: 100%;
+  /* Hapus height: 100% agar gambar tidak mengecil */
+  object-fit: contain;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+  background: #222;
+  animation: imgFadeInDown 0.7s cubic-bezier(.4,1.7,.7,1) both;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: block;
+}
+.project-detail-img-vertical-scroll .project-detail-img.full.scrollable-vertical {
+  width: 100%;
+  height: auto;
+}
+.img-nav-btn {
+  /* Remove absolute positioning */
+  position: static;
+  margin: 0 6px;
+  background: rgba(255,255,255,0.92);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 1.1rem;
+  color: #e48315;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 3;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  opacity: 0.85;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+.img-nav-btn.left { left: unset; }
+.img-nav-btn.right { right: unset; }
+.img-nav-btn:hover {
+  background: #e48315;
+  color: #fff;
+  opacity: 1;
+  outline: 2px solid #fff;
+}
+.img-nav-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 4;
+  gap: 8px;
+}
+.img-dots {
+  position: static;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.img-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  transition: background 0.2s, opacity 0.2s;
+}
+.img-dot.active {
+  background: #e48315;
+  opacity: 1;
+}
+.project-detail-content.optimized {
+  width: 100%;
+  background: rgba(24,24,27,0.96);
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  justify-content: flex-start;
+  overflow-y: auto;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  box-sizing: border-box;
+}
+.project-detail-content.optimized h4 {
+  margin: 0 0 0.5rem 0;
+  color: #e48315;
+  font-size: 1.18rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.project-detail-desc {
+  margin: 0;
+  color: #fff;
+  font-size: 0.98rem;
+  text-align: center;
+  line-height: 1.7;
+  padding: 0 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Tambahan: Scrollable description khusus untuk card pertama (Figma) */
+.project-detail-desc.scrollable {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 10px;
+  text-align: left;
+  /* Scrollbar styling for all browsers */
+  scrollbar-width: thin;
+  scrollbar-color: #e48315 #18181b;
+}
+.project-detail-desc.scrollable::-webkit-scrollbar {
+  width: 8px;
+  background: #18181b;
+}
+.project-detail-desc.scrollable::-webkit-scrollbar-thumb {
+  background: #e48315;
+  border-radius: 6px;
+}
+.figma-desc-title {
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.figma-desc-list {
+  margin: 0;
+  padding-left: 0;
+  color: #fffbe7;
+  font-size: 1rem;
+  text-align: left;
+  list-style: disc inside;
+  line-height: 1.7;
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 0.2rem;
+  padding-left: 1.1rem;
+}
+.figma-desc-list li {
+  margin-bottom: 0.15rem;
+  padding-left: 0.1rem;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.2px;
+}
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
+}
+@keyframes imgFadeInDown {
+  from { opacity: 0; transform: translateY(-40px) scale(0.95);}
+  to { opacity: 1; transform: translateY(0) scale(1);}
+}
+@media (max-width: 600px) {
+  .project-detail-close-outside {
+    top: -12px;
+    right: -12px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.1rem;
+  }
+  .project-detail-card.optimized {
+    padding: 0;
+    border-radius: 12px;
+    min-width: 0;
+    max-width: 99vw;
+    min-height: 0;
+    max-height: 99vh;
+  }
+  .project-detail-img-scroll,
+  .project-detail-img-vertical-scroll,
+  .project-detail-img-noscr {
+    height: 120px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  .project-detail-img.full,
+  .project-detail-img.full.scrollable-vertical {
+    max-height: 120px;
+  }
+  .project-detail-content.optimized {
+    padding: 0.7rem 0.3rem 1rem 0.3rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
