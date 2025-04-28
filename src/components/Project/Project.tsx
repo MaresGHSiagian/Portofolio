@@ -214,7 +214,7 @@ export function Project() {
       detailTitle: "SISTEM INFORMASI ATTB ( Aset tetap tidak Beropersi) PLN UP 3 MEDAN",
       links: [
         {
-          href: "https://github.com/CodeVinayak/AI-Chatbot-Assistant",
+          href: "",
           icon: githubIcon,
           alt: "Visit site"
         },
