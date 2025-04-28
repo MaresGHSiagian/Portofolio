@@ -9,69 +9,24 @@ function CenterPopup({ message, type }: { message: string, type: 'success' | 'er
     <div style={{
       position: 'fixed',
       top: 0, left: 0, right: 0, bottom: 0,
-      background: 'rgba(0,0,0,0.25)',
+      background: 'rgba(0,0,0,0.3)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      zIndex: 9999,
-      animation: 'fadeInBg 0.3s'
+      zIndex: 9999
     }}>
-      <style>
-        {`
-          @keyframes fadeInBg {
-            from { opacity: 0; }
-            to { opacity: 1; }
-          }
-          @keyframes popupScale {
-            from { transform: scale(0.85); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-          }
-        `}
-      </style>
       <div style={{
         background: '#fff',
-        padding: '2.5rem 2.5rem 2rem 2.5rem',
-        borderRadius: '18px',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
+        padding: '2rem 2.5rem',
+        borderRadius: '12px',
+        boxShadow: '0 2px 16px rgba(0,0,0,0.2)',
         textAlign: 'center',
-        minWidth: '260px',
-        maxWidth: '90vw',
-        animation: 'popupScale 0.25s',
-        border: type === 'success' ? '2px solid #4ade80' : '2px solid #f87171'
+        color: type === 'success' ? '#198754' : '#dc3545',
+        fontWeight: 600,
+        fontSize: '1.2rem',
+        minWidth: '220px'
       }}>
-        <div style={{
-          fontSize: '2.5rem',
-          marginBottom: '1rem',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}>
-          {type === 'success' ? (
-            <span style={{ color: '#22c55e' }}>
-              {/* Check icon */}
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="12" fill="#bbf7d0"/>
-                <path d="M7 13l3 3 7-7" stroke="#22c55e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          ) : (
-            <span style={{ color: '#ef4444' }}>
-              {/* Error icon */}
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="12" r="12" fill="#fee2e2"/>
-                <path d="M15 9l-6 6M9 9l6 6" stroke="#ef4444" strokeWidth="2.5" strokeLinecap="round"/>
-              </svg>
-            </span>
-          )}
-        </div>
-        <div style={{
-          color: type === 'success' ? '#166534' : '#b91c1c',
-          fontWeight: 600,
-          fontSize: '1.15rem',
-          marginBottom: '0.2rem'
-        }}>
-          {message}
-        </div>
+        {message}
       </div>
     </div>
   )
@@ -125,15 +80,13 @@ export function Form() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, message }),
       });
-      const data = await res.json();
-      console.log('API response:', data); // Debug respons API
-      if (res.ok && data.status === 'success') {
+      if (res.ok) {
         setSuccess(true);
         toast.success('Email successfully sent!');
-        setPopup({ message: 'Success!', type: 'success' });
+        setPopup({ message: 'Massage successfully sent!', type: 'success' });
       } else {
         toast.error('Failed to send message');
-        setPopup({ message: data.message || 'Failed to send message', type: 'error' });
+        setPopup({ message: 'Failed to send message', type: 'error' });
       }
     } catch {
       toast.error('Failed to send message');
