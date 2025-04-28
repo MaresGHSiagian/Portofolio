@@ -201,7 +201,7 @@ export function Project() {
       detailTitle: "SIPMIT - Sistem Informasi Prasmanan Mahasiswa IT DEL (SIPMIT)",
       links: [
         {
-          href: "https://github.com/MaresGHSiagian/Proyek-Sistem-Informasi-Pengaduan-Masyarakat-Sipema-",
+          href: "",
           icon: githubIcon,
           alt: "Visit site"
         }
@@ -222,7 +222,7 @@ export function Project() {
     },
     {
       image: githubIcon,
-      title: "SISTEM INFORMASI PENGADUAN MASYRAKATA (SIPEMA)",
+      title: "SISTEM INFORMASI PENGADUAN MASYRAKAT (SIPEMA)",
       description: "A modern web platform where citizens can easily voice their concerns and complaints. Clean and intuitive design ensures users of all ages can navigate effortlessly. Complaints are categorized and forwarded to the relevant authorities for action.",
       detailTitle: "SISTEM INFORMASI PENGADUAN MASYRAKATA (SIPEMA)",
       links: [
