@@ -261,6 +261,44 @@ export function Project() {
     }
   ];
 
+  // Fungsi animasi guling-guling sesuai posisi grid 3 kolom
+  const getCardAnimation = (idx: number, total: number) => {
+    const columns = 3;
+    const row = Math.floor(idx / columns);
+    const col = idx % columns;
+    const rows = Math.ceil(total / columns);
+
+    // Baris terakhir, jumlah card bisa kurang dari 3
+    if (row === 0) {
+      if (col === 0) return "rotateInDownLeft";
+      if (col === 1) return "rotateIn";
+      if (col === 2) return "rotateInDownRight";
+    } else if (row === rows - 1) {
+      // Baris terakhir
+      if (total % columns === 1) {
+        // Hanya 1 card di tengah
+        return "rotateIn";
+      }
+      if (total % columns === 2) {
+        if (col === 0) return "rotateInUpLeft";
+        if (col === 1) return "rotateInUpRight";
+      }
+      if (total % columns === 0 || (idx + 1) <= (rows - 1) * columns) {
+        // Baris penuh
+        if (col === 0) return "rotateInUpLeft";
+        if (col === 1) return "rotateIn";
+        if (col === 2) return "rotateInUpRight";
+      }
+    } else {
+      // Baris tengah (jika ada)
+      if (col === 0) return "rotateInLeft";
+      if (col === 1) return "rotateIn";
+      if (col === 2) return "rotateInRight";
+    }
+    // Default fallback
+    return "rotateIn";
+  };
+
   return (
     <Container id="project">
       <h2>My Projects</h2>
@@ -270,7 +308,11 @@ export function Project() {
         gap: "2.5rem"
       }}>
         {projects.map((proj, idx) => (
-          <ScrollAnimation animateIn="flipInX" key={idx}>
+          <ScrollAnimation
+            animateIn={getCardAnimation(idx, projects.length)}
+            delay={idx * 150}
+            key={idx}
+          >
             <div
               className="project"
               style={{
@@ -408,7 +450,7 @@ export function Project() {
                               fontSize: "1.08rem",
                               fontWeight: 700,
                               letterSpacing: "0.02em",
-                              boxShadow: "0 2px 12px rgba(67,206,162,0.18)",
+                              boxShadow: "0 2px 12px rgba(67,206,162,0.18)", // <-- tambahkan ini
                               transition: "transform 0.18s, box-shadow 0.18s, background 0.18s",
                               cursor: "pointer"
                             }}

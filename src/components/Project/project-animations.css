@@ -1,0 +1,59 @@
+/* Animasi rollInLeft */
+@keyframes customRollInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-540deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.custom-roll-in-left {
+  animation: customRollInLeft 1.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Animasi rollInRight */
+@keyframes customRollInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%) rotate(540deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.custom-roll-in-right {
+  animation: customRollInRight 1.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Animasi rollInDown */
+@keyframes customRollInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%) rotate(-540deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.custom-roll-in-down {
+  animation: customRollInDown 1.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Animasi rollInUp */
+@keyframes customRollInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) rotate(540deg);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.custom-roll-in-up {
+  animation: customRollInUp 1.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
