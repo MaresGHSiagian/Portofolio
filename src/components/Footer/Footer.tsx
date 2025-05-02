@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <Container className="footer">
       <a href="https://maressiagian-portofolio-rosy.vercel.app/" className="logo">
-        <span>maressiagian.com</span>
+        <span style={{ fontStyle: "italic" }}>maressiagian.com</span>
       </a>
       <div>
         <p>© 2024 Mares G H Siagian</p>
