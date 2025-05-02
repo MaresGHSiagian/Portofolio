@@ -9,8 +9,8 @@ import instagramIcon from '../../assets/instagram.svg'
 export function Footer() {
   return (
     <Container className="footer">
-      <a href="https://myportofolio-rosy.vercel.app/" className="logo">
-        <span>https://myportofolio-rosy.vercel.app/</span>
+      <a href="https://maressiagian-portofolio-rosy.vercel.app/" className="logo">
+        <span>https://maressiagian-portofolio-rosy.vercel.app/</span>
       </a>
       <div>
         <p>© 2024 Mares G H Siagian</p>
